@@ -13,7 +13,7 @@ done
 
 python ./manage.py collectstatic --noinput
 
-gunicorn server.wsgi --bind 0.0.0.0:8000
+gunicorn samgtudist.wsgi --bind 0.0.0.0:8000
 
 ########################################
 

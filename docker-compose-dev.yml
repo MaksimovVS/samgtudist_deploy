@@ -1,4 +1,12 @@
+version: '3.8'
+
 services:
+    db:
+        image: postgres:13.0-alpine
+        volumes:
+            - /var/lib/postgresql/data/
+        env_file:
+            - ./.env
     nginx:
         restart: unless-stopped
         build:
@@ -21,6 +29,10 @@ services:
             - static_volume:/app/backend/samgtudist/django_static
         expose:
             - 8000
+        depends_on:
+            -   db
+        env_file:
+            -   ./.env
 
 volumes:
     static_volume: {}
