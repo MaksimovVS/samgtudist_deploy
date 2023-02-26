@@ -14,14 +14,21 @@ SECRET_KEY = os.getenv("SECRET_KEY_DJANGO", 'uaunwfuihesti8wi1234')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['samgtudist.ddns.net', '0.0.0.0']
 
 CORS_URLS_REGEX = r'^/api/.*$'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    'https://localhost:3000',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1"]
+# CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1"]
+CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1",
+    "https://127.0.0.1",
+    "http://0.0.0.0",
+    "https://0.0.0.0",
+]
 
 # Application definition
 
